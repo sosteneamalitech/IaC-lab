@@ -8,3 +8,8 @@ variable "remote_state_lock_table_name" {
   default     = "sostene-amalitech-remote-state-lock"
   type        = string
 }
+variable "default_aws_profile" {
+  description = "The default AWS profile to use for authentication."
+  default     = "sostene.amalitech"
+  type        = string
+}

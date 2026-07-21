@@ -8,7 +8,7 @@ terraform {
 }
 provider "aws" {
   region = "us-east-1"
-  profile = "sostene.amalitech"
+  profile = var.default_aws_profile
 }
 
 resource "aws_s3_bucket" "remote_state" {
