@@ -13,3 +13,8 @@ variable "default_aws_profile" {
   default     = "sostene.amalitech"
   type        = string
 }
+variable "owner" {
+  description = "Owner tag applied to resources."
+  type        = string
+  default     = "Sostene"
+}

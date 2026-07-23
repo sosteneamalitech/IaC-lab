@@ -7,7 +7,7 @@ terraform {
   }
 }
 provider "aws" {
-  region = "us-east-1"
+  region  = "us-east-1"
   profile = var.default_aws_profile
 }
 
@@ -15,6 +15,11 @@ resource "aws_s3_bucket" "remote_state" {
   bucket = var.remote_state_bucket
   lifecycle {
     prevent_destroy = true
+  }
+
+  tags = {
+    Name  = var.remote_state_bucket
+    Owner = var.owner
   }
 }
 resource "aws_s3_bucket_versioning" "remote_state" {
@@ -41,5 +46,10 @@ resource "aws_dynamodb_table" "remote_state_lock" {
   }
   lifecycle {
     prevent_destroy = true
+  }
+
+  tags = {
+    Name  = var.remote_state_lock_table_name
+    Owner = var.owner
   }
 }
