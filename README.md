@@ -94,14 +94,26 @@ if you actually want them gone.
 - Inconsistent resource/tag naming made console lookups slower → standardized
   on `${var.tag_name_prefix}-<type>`.
 
-## Evidence checklist
+## Screenshots
 
-| Deliverable | Source |
-|---|---|
-| Terraform version | `terraform version` |
-| plan/apply/destroy | terminal output, both stacks |
-| Console resources | VPC, subnet, IGW, SG, EC2 |
-| Backend proof | S3 bucket + DynamoDB table, or `backend "s3" {}` in `lab/main.tf` |
+**SSH key generation**
+![ssh-keygen](screenshots/key-gen.png)
+
+**`terraform init` against the S3 backend**
+![terraform init](screenshots/terraform-lab.png)
+
+**`terraform plan`**
+![terraform plan](screenshots/terraform-plan-1.png)
+
+**`terraform apply`**
+![terraform apply](screenshots/terraform-apply-1.png)
+![terraform apply complete](screenshots/apply.png)
+
+**EC2 instance running**
+![EC2 console](screenshots/ec2-console.png)
+
+**S3 remote state bucket**
+![S3 console](screenshots/s3-bucket-console.png)
 
 ## Security
 
